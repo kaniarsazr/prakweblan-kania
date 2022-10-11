@@ -25,7 +25,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-//$routes->setAutoRoute(false);
+// $routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -36,13 +36,16 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/mahasiswa', 'MahasiswaController::index');
-$routes->get('/create', 'MahasiswaController::create');
-$routes->post('/store', 'MahasiswaController::store');
-$routes->get('/edit/(:num)', 'MahasiswaController::edit/$1');
-$routes->post('/update/(:num)', 'MahasiswaController::update/$1');
-$routes->delete('/delete/(:num)', 'MahasiswaController::delete/$1');
-$routes->get('/index', 'Pages::index');
+$routes->get('/layanan', 'LayananController::index');
+$routes->get('/create', 'LayananController::create');
+$routes->post('/store', 'LayananController::store');
+$routes->get('/edit/(:num)', 'LayananController::edit/$1');
+$routes->post('/update/(:num)', 'LayananController::update/$1');
+$routes->post('/delete/(:num)', 'LayananController::delete/$1');
+$routes->get('/transaksi', 'TransaksiController::index');
+$routes->get('/createTransaksi', 'TransaksiController::create');
+$routes->post('/storeTransaksi', 'TransaksiController::store');
+$routes->get('pages', 'Pages::index');
 $routes->get('(:any)', 'Pages::view/$1');
 
 /*
